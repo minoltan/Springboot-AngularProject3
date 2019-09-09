@@ -22,15 +22,15 @@ export class BackendServiceService {
     return observableThrowError(error.message || "Server Error");
   }
 
-  getRequest(url: string):Observable<any> {
+  getRequest(url: string): Observable<any> {
     return this.http.get<any>(url).pipe(catchError(this.errorHandler));
   }
 
-  postRequest(url: string, body:any):Observable<any> {
+  postRequest(url: string, body: any): Observable<any> {
     return this.http.post<any>(url, body, this.httpOptions).pipe(catchError(this.errorHandler));
   }
 
-  deleteRequest(url: string):Observable<any> {
+  deleteRequest(url: string): Observable<any> {
     return this.http.delete<any>(url).pipe(catchError(this.errorHandler));
   }
 
